@@ -3,5 +3,6 @@ Bundler.require
 
 $:.unshift File.expand_path('./../lib', __FILE__)
 require 'positive_integer'
+require 'menu'
 
-p PositiveInteger.new(17).find_greatest_binary_gap
+p Menu.new.show
