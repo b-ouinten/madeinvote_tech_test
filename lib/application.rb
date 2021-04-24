@@ -11,13 +11,13 @@ class Application
       
       positive_integer = PositiveInteger.new
       
-      menu.ask_choose_approach
+      menu.ask_for_choose_approach
       choice = menu.entries[:choice]
       break if choice.eql? '3'
       
       loop do
-        menu.ask_integer_value
-        break if positive_integer.value_updated?(menu.entries[:integer])
+        menu.ask_for_integer_value
+        break if positive_integer.value_updated? menu.entries[:integer]
       end
       integer_value = positive_integer.value
       greatest_binary_gap = choice == '1' ? positive_integer.find_greatest_binary_gap : positive_integer.find_greatest_binary_gap_elegant_way

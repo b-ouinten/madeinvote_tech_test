@@ -3,7 +3,6 @@ require 'positive_integer'
 describe PositiveInteger do
   before(:each) do
     @integer = PositiveInteger.new
-    
   end
 
   describe "value_update?" do
