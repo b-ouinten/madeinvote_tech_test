@@ -5,15 +5,10 @@ class PositiveInteger
     @value = 1
   end
 
-  def update_value(value)
+  def value_updated?(value)
     return false if value <= 0
     @value = value
     true
-  end
-  
-  def find_greatest_binary_gap_elegant_way
-    greatest_binary_gap = to_binary_elegant_way.gsub(/0+1/).max_by {|binary_gap| binary_gap.size}
-    greatest_binary_gap ? greatest_binary_gap.size - 1 : 0
   end
   
   def find_greatest_binary_gap
@@ -28,16 +23,18 @@ class PositiveInteger
         binary_gap_chain = ''
       end
     end
-
+    
     greatest_binary_gap
+  end
+  
+  def find_greatest_binary_gap_elegant_way
+    greatest_binary_gap = to_binary_elegant_way.gsub(/0+1/).max_by {|binary_gap| binary_gap.size}
+    greatest_binary_gap ? greatest_binary_gap.size - 1 : 0
   end
   
   private
   
-  def to_binary_elegant_way
-    @value.to_s(2)
-  end
-
+  
   def to_binary
     quotient = @value
     binary = ''
@@ -45,7 +42,11 @@ class PositiveInteger
       binary << (quotient % 2).to_s
       quotient /= 2
     end
-
+    
     binary.reverse
+  end
+  
+  def to_binary_elegant_way
+    @value.to_s(2)
   end
 end

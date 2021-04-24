@@ -17,7 +17,7 @@ class Application
       
       loop do
         menu.ask_integer_value
-        break if positive_integer.update_value(menu.entries[:integer])
+        break if positive_integer.value_updated?(menu.entries[:integer])
       end
       integer_value = positive_integer.value
       greatest_binary_gap = choice == '1' ? positive_integer.find_greatest_binary_gap : positive_integer.find_greatest_binary_gap_elegant_way
