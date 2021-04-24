@@ -6,4 +6,4 @@ To calculate the greatest binary gap, two approaches have been implemented :
 
 ### Try it !
 To launch the program run : **ruby app.rb**  
-To launch tests run : rspec -fd
+To launch tests run : **rspec -fd**
