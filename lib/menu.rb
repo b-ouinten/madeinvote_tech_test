@@ -20,7 +20,6 @@ class Menu
 
   def ask_for_integer_value
     puts "|Enter a strictly positive integer !#{' ' * (134 - 36 -1)}|"    
-    print '|'
     input = $stdin.gets.chomp
     @entries[:integer] = input.to_i
   end

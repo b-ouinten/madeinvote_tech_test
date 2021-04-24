@@ -20,9 +20,9 @@ describe Menu do
       expect(@menu.entries[:choice]).to eq '1'
     end
 
-    it "should ask again when user input is invalid and update entries[:choice] with a next valid user input" do
+    it "should ask again when user input is invalid and update entries[:choice] attribut with a next valid user input" do
       allow($stdin).to receive(:gets).and_return '4', '2'
-      expect{@menu.ask_for_choose_approach}.to output(
+      expect{ @menu.ask_for_choose_approach }.to output(
         "|1. First approach, see the PositiveInteger#find_greatest_binary_gap method.#{' ' * (134 - 76 - 1)}|\n" \
         "|2. Second approach, see the PositiveInteger#find_greatest_binary_gap_elegant_way method.#{' ' * (134 - 89 - 1)}|\n" \
         "|3. Quit.#{' ' * (134 - 9 - 1)}|\n" \
