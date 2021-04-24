@@ -5,23 +5,19 @@ class Menu
     @entries = {}
   end
   
-  def show
-    input = ''
-    puts "|Enter a positive integer other than zero.#{' ' * (126 - 42 -1)}|"    
-    loop do
-      print '|'
-      input = gets.chomp
-      puts "#{' ' *(126 - 1)}|"
-      break if input.to_i > 0
-      puts "|You must enter a positive integer other than zero ! Try again please !#{' ' * (126 - 71 - 1)}|"
-    end
-
+  def ask_for_integer_value
+    puts "|Enter a strictly positive integer !#{' ' * (126 - 36 -1)}|"    
+    print '|'
+    input = gets.chomp
+    puts "#{' ' *(126 - 1)}|"
     @entries[:integer] = input.to_i
+  end
     
-    puts "|1. First approache.#{' ' * (126 - 20 - 1)}|"
-    puts "|2. Second approache.#{' ' * (126 - 21 - 1)}|"
+  def ask_for_choose_approache
+    input = ''
+    puts "|1. First approache, see the PositiveInteger#find_greatest_binary_gap method.#{' ' * (126 - 77 - 1)}|"
+    puts "|2. Second approache, see the PositiveInteger#find_greatest_binary_gap_elegant_way method.#{' ' * (126 - 90 - 1)}|"
     puts "|3. Quit.#{' ' * (126 - 9 - 1)}|"
-    
     loop do
       print '|'
       input = gets.chomp
@@ -30,7 +26,5 @@ class Menu
       puts "|You must enter only 1, 2 or 3 ! Try again please !#{' ' * (126 - 51 - 1)}|"
     end
     @entries[:choose] = input
-
-    entries
   end
 end

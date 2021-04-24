@@ -2,7 +2,8 @@ require 'bundler'
 Bundler.require
 
 $:.unshift File.expand_path('./../lib', __FILE__)
-require 'positive_integer'
+require 'application'
 require 'menu'
+require 'positive_integer'
 
-p Menu.new.show
+Application.new.perform
