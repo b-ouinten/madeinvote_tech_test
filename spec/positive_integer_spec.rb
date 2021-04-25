@@ -24,9 +24,9 @@ describe PositiveInteger do
 
   describe "to_binary" do
     it "should correctly convert an integer to binary" do
-      @integer.value_updated?('1001'.to_i(2))
+      @integer.value_updated? '1001'.to_i(2)
       expect(@integer.send :to_binary).to eq '1001'
-      @integer.value_updated?('1111'.to_i(2))
+      @integer.value_updated? '1111'.to_i(2)
       expect(@integer.send :to_binary).to eq '1111'
     end
   end
@@ -42,26 +42,30 @@ describe PositiveInteger do
 
   describe "find_greatest_binary_gap" do
     it "should return a correct greatest binary gap of an integer" do
-      expect(@integer.value_updated? '10001'.to_i(2))
+      @integer.value_updated? '10001'.to_i(2)
       expect(@integer.find_greatest_binary_gap).to eq 3
-      expect(@integer.value_updated? '110'.to_i(2))
+      @integer.value_updated? '100101'.to_i(2)
+      expect(@integer.find_greatest_binary_gap).to eq 2
+      @integer.value_updated? '110'.to_i(2)
       expect(@integer.find_greatest_binary_gap).to eq 0
-      expect(@integer.value_updated? '1010'.to_i(2))
+      @integer.value_updated? '10100'.to_i(2)
       expect(@integer.find_greatest_binary_gap).to eq 1
-      expect(@integer.value_updated? '1111'.to_i(2))
+      @integer.value_updated? '1111'.to_i(2)
       expect(@integer.find_greatest_binary_gap).to eq 0
     end
   end
-
+  
   describe "find_greatest_binary_gap_elegant_way" do
     it "should return a correct greatest binary gap of an integer" do
-      expect(@integer.value_updated? '10001'.to_i(2))
+      @integer.value_updated? '10001'.to_i(2)
       expect(@integer.find_greatest_binary_gap_elegant_way).to eq 3
-      expect(@integer.value_updated? '110'.to_i(2))
+      @integer.value_updated? '100101'.to_i(2)
+      expect(@integer.find_greatest_binary_gap_elegant_way).to eq 2
+      @integer.value_updated? '110'.to_i(2)
       expect(@integer.find_greatest_binary_gap_elegant_way).to eq 0
-      expect(@integer.value_updated? '1010'.to_i(2))
+      @integer.value_updated? '10100'.to_i(2)
       expect(@integer.find_greatest_binary_gap_elegant_way).to eq 1
-      expect(@integer.value_updated? '1111'.to_i(2))
+      @integer.value_updated? '1111'.to_i(2)
       expect(@integer.find_greatest_binary_gap_elegant_way).to eq 0
     end
   end
